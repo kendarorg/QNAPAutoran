@@ -7,10 +7,10 @@ This package installs a new application (Autoran) that can
 
 ## Installation
 
-In QTS Desktop, open **App Center**.
-On the settings enable the "installation without valid signature"
-Download the appropriate package from the releases 
-Upload it on App Center with the Plus sign (manual installation)
+* In QTS Desktop, open **App Center**.
+* On the settings enable the "installation without valid signature"
+* Download the appropriate package from the releases 
+* Upload it on App Center with the Plus sign (manual installation)
 
 ## Usage
 
@@ -38,8 +38,8 @@ An example app can be a directory TestApp containing an index.php
 
 ### Scripts
 
-The up-*.sh scripts are run starting the application (and the NAS)
-The down-*.sh scripts are run closing the application (and the NAS)
+* The up-*.sh scripts are run starting the application (and the NAS)
+* The down-*.sh scripts are run closing the application (and the NAS)
 
 If you want a specific order just name them with numbers
 
@@ -61,6 +61,20 @@ Down:
 <pre>
 sudo umount /share/Public/othernas
 </pre>
+
+### Crontab 
+
+Mind to use the same script EXACTLY
+
+Remember to use the single ' or the expression will be evaluated! No variables
+
+* In your up- file just call 
+    
+        ./Utils/crontab.sh add '* * * * * /usr/local/ispconfig/server/server.sh'
+
+* In your down- file just call 
+
+        ./Utils/crontab.sh remove '* * * * * /usr/local/ispconfig/server/server.sh'
 
 ## Build on your QNAP
 
